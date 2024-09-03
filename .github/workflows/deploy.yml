@@ -9,7 +9,9 @@ on:
 
   workflow_dispatch:
 
-
+permissions:
+  id-token: write
+  
 jobs:
   deploy:
     environment:
