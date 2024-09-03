@@ -42,6 +42,7 @@ jobs:
         run: |
           cd dp_pages_next
           npm ci
+          npm i sharp
           npm run build
 
       - name: Setup Pages
