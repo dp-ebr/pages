@@ -8,6 +8,10 @@ on:
 
   workflow_dispatch:
 
+env:
+  XC_DOCURL: ${{ vars.XC_DOCURL }}
+  XC_AUTH: ${{ secrets.XC_AUTH }}
+
 jobs:
   deploy:
     environment:
