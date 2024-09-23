@@ -45,6 +45,17 @@ jobs:
           npm i sharp
           npm run build
 
+      - name: Checkout another repository
+        uses: actions/checkout@v4
+        with:
+          repository: dp-ebr/pages-static
+          path: pages-static
+          token: ${{ secrets.ACCESS_TOKEN }}
+
+      - name: Copy static files
+        run: |
+          cp -r ./pages-static/* ./dp_pages_next/build
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
