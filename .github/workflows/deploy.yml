@@ -11,6 +11,7 @@ on:
 env:
   XC_DOCURL: ${{ vars.XC_DOCURL }}
   XC_AUTH: ${{ secrets.XC_AUTH }}
+  PUBLICATIONS_FOLDER: pages-publications
 
 jobs:
   deploy:
@@ -38,6 +39,13 @@ jobs:
         with:
           node-version: "18" # You can adjust this version as needed
 
+      - name: Checkout puiblications repository
+        uses: actions/checkout@v4
+        with:
+          repository: dp-ebr/pages-publications
+          path: ${{ env.PUBLICATIONS_FOLDER }}
+          token: ${{ secrets.ACCESS_TOKEN }}
+
       - name: Install dependencies and build
         run: |
           cd dp_pages_next
@@ -56,14 +64,7 @@ jobs:
         run: |
           cp -r ./pages-static/* ./dp_pages_next/build
 
-      - name: Checkout puiblications repository
-        uses: actions/checkout@v4
-        with:
-          repository: dp-ebr/pages-publications
-          path: pages-publications
-          token: ${{ secrets.ACCESS_TOKEN }}
-
-      - name: Copy static files
+      - name: Copy publications files
         run: |
           cp -r ./pages-publications/* ./dp_pages_next/build/art
 
