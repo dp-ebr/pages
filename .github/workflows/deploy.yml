@@ -11,7 +11,7 @@ on:
 env:
   XC_DOCURL: ${{ vars.XC_DOCURL }}
   XC_AUTH: ${{ secrets.XC_AUTH }}
-  PUBLICATIONS_FOLDER: pages-publications
+  PUBLICATIONS_FOLDER: ${{ github.workspace }}/pages-publications
 
 jobs:
   deploy:
