@@ -65,7 +65,7 @@ jobs:
 
       - name: Copy static files
         run: |
-          cp -r ./pages-static/* ./dp_pages_next/build/art
+          cp -r ./pages-publications/* ./dp_pages_next/build/art
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
