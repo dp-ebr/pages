@@ -78,7 +78,7 @@ jobs:
 
       - name: Copy publications files
         run: |
-          cp -r ./pages-publications/* ./dp_pages_next/build/art
+          cp -r ./pages-publications/* ./dp_pages_next/build/post
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
