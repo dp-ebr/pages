@@ -78,6 +78,7 @@ jobs:
 
       - name: Copy publications files
         run: |
+          mkdir -p ./dp_pages_next/build/post
           cp -r ./pages-publications/* ./dp_pages_next/build/post
 
       - name: Setup Pages
